@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gameOfTheYear"
+    }
+  },
+  "defaultProject": "gameOfTheYear",
+  "cli": {
+    "analytics": "368145ad-015e-4445-a720-0fae07502f33"
+  }
 }
