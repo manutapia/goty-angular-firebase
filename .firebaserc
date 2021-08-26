@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "firestore-goty-graphics": {
+      "hosting": {
+        "gameOfTheYear": [
+          "firestore-goty-graphics"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "firestore-goty-graphics"
+  }
+}
