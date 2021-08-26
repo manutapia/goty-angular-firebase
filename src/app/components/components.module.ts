@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { HorizontalBarChartComponent } from './horizontal-bar-chart/horizontal-bar-chart.component';
 
@@ -11,7 +13,8 @@ import { HorizontalBarChartComponent } from './horizontal-bar-chart/horizontal-b
     HorizontalBarChartComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     NavbarComponent
