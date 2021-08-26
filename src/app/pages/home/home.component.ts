@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
+import { Game } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  games:any[] = []
+
+  constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
+    this.db.collection('goty').valueChanges()
+      .pipe(
+        map((games:Game[])=> games.map( ({name, votes}) => ({name, value: votes}) ))
+      )
+      .subscribe(formattedGames=>{
+        this.games = formattedGames
+      })
   }
 
 }

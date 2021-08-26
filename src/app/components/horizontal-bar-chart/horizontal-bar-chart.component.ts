@@ -1,38 +1,29 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Game } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-horizontal-bar-chart',
   templateUrl: './horizontal-bar-chart.component.html',
   styleUrls: ['./horizontal-bar-chart.component.css']
 })
-export class HorizontalBarChartComponent{
+export class HorizontalBarChartComponent {
 
-  results: any[] = [
-    {
-      "name": "Germany",
-      "value": 8940000
-    },
-    {
-      "name": "USA",
-      "value": 5000000
-    },
-    {
-      "name": "France",
-      "value": 7200000
-    }
-  ];;
-
+  @Input() results:Game[] = []
   // options
   showXAxis = true;
   showYAxis = true;
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Videogames';
+  xAxisLabel = 'Votes';
   showYAxisLabel = true;
-  yAxisLabel = 'Votes';
+  yAxisLabel = 'Videogames';
 
   colorScheme = 'nightLights'
 
+  interval;
+
+  constructor() {
+  }
 
 }

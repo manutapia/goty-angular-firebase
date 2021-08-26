@@ -7,8 +7,12 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from "./components/components.module";
 import { HttpClientModule } from "@angular/common/http"
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import { GotyComponent } from './pages/goty/goty.component';
 import { HomeComponent } from './pages/home/home.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { HomeComponent } from './pages/home/home.component';
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
