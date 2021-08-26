@@ -2,17 +2,23 @@
 <hr>
 <div class="row">
     <div class="col">
-        <div class="card-group">
-            <div class="card bg-dark m-2" *ngFor="let game of games">
-                <img [src]="game.img" class="card-img-top" [alt]="game.name">
-                <div class="card-body">
-                    <h5 class="card-title">{{game.name}}</h5>
-                    <p class="card-text">Click to vote!</p>
-                    <div class="d-grid">
-                        <button class="btn btn-outline-primary" (click)="voteGame(game)">Vote</button>
+        <ng-container *ngIf="ready else spinner">
+            <div class="card-group">
+                <div class="card bg-dark m-2" *ngFor="let game of games">
+                    <img [src]="game.img" class="card-img-top" [alt]="game.name">
+                    <div class="card-body">
+                        <h5 class="card-title">{{game.name}}</h5>
+                        <p class="card-text">Click to vote!</p>
+                        <div class="d-grid">
+                            <button class="btn btn-outline-primary" (click)="voteGame(game)">Vote</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </ng-container>
+
+        <ng-template #spinner>
+            <app-spinner></app-spinner>
+        </ng-template>
     </div>
 </div>

@@ -7,13 +7,15 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { HorizontalBarChartComponent } from './horizontal-bar-chart/horizontal-bar-chart.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    HorizontalBarChartComponent
+    HorizontalBarChartComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { HorizontalBarChartComponent } from './horizontal-bar-chart/horizontal-b
   ],
   exports:[
     NavbarComponent,
-    HorizontalBarChartComponent
+    HorizontalBarChartComponent,
+    SpinnerComponent
   ]
 })
 export class ComponentsModule { }

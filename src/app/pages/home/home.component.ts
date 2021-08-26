@@ -10,6 +10,7 @@ import { Game } from 'src/app/interfaces/interfaces';
 })
 export class HomeComponent implements OnInit {
 
+  ready:boolean = false;
   games:any[] = []
 
   constructor(private db: AngularFirestore) { }
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit {
         map((games:Game[])=> games.map( ({name, votes}) => ({name, value: votes}) ))
       )
       .subscribe(formattedGames=>{
+        this.ready = true;
         this.games = formattedGames
       })
   }

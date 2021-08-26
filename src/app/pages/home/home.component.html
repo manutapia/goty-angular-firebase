@@ -2,6 +2,11 @@
 <hr>
 <div class="row">
     <div class="col">
-        <app-horizontal-bar-chart [results]="games"></app-horizontal-bar-chart>
+        <ng-container *ngIf="ready else spinner">
+            <app-horizontal-bar-chart [results]="games"></app-horizontal-bar-chart>
+        </ng-container>
+        <ng-template #spinner>
+            <app-spinner></app-spinner>
+        </ng-template>
     </div>
 </div>

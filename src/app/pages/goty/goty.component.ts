@@ -11,11 +11,13 @@ import Swal from 'sweetalert2'
 })
 export class GotyComponent implements OnInit {
 
+  ready:boolean = false;
   games: Game[] = [];
   constructor(private _gameService:GameService) { }
 
   ngOnInit(): void {
     this._gameService.getNominations().subscribe(nominations=>{
+      this.ready = true;
       this.games = nominations;
     })
   }
