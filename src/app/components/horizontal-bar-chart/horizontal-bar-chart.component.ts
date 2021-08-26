@@ -34,6 +34,5 @@ export class HorizontalBarChartComponent{
 
   colorScheme = 'nightLights'
 
-  constructor() {}
 
 }

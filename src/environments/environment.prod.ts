@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlApi: 'https://us-central1-firestore-goty-graphics.cloudfunctions.net'
 };
